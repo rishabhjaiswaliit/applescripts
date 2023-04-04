@@ -4,7 +4,7 @@ if vv < 10.14 then
 else if vv < 13 then
 	tell application "System Settings"
 		set the current pane to pane id "com.apple.preference.universalaccess"
-		#delay 0.01 #needs time to open universal access
+		#delay 0.1 #needs time to open universal access
 		tell application "System Events" to tell process "System Preferences" to tell window "Accessibility"
 			select row 5 of table 1 of scroll area 1 #open display preferences
 			click radio button "Color Filters" of tab group 1 of group 1
@@ -19,7 +19,7 @@ else
 	tell application "System Events"
 		tell its application process "System Settings"
 			repeat until (UI element 4 of group 1 of scroll area 1 of group 1 of group 2 of splitter group 1 of group 1 of window "Accessibility" exists) or (checkbox 1 of group 4 of scroll area 1 of group 1 of group 2 of splitter group 1 of group 1 of window "Display" exists)
-				#delay 0.01
+				#delay 0.1
 			end repeat
 			if (UI element 4 of group 1 of scroll area 1 of group 1 of group 2 of splitter group 1 of group 1 of window "Accessibility" exists) then
 				click UI element 3 of group 1 of scroll area 1 of group 1 of group 2 ¬
@@ -27,7 +27,7 @@ else
 			end if
 			repeat until checkbox 1 of group 4 of scroll area 1 of group 1 ¬
 				of group 2 of splitter group 1 of group 1 of window "Display" exists
-				#delay 0.01
+				#delay 0.1
 			end repeat
 			click checkbox 1 of group 4 of scroll area 1 of group 1 ¬
 				of group 2 of splitter group 1 of group 1 of window "Display"
