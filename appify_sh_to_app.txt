@@ -1,0 +1,1 @@
+appify script_coin_toss.sh Coin_Toss.app
